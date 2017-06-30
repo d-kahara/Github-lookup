@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +10,39 @@
   <link rel="stylesheet" href="build/css/vendor.css">
   <title>Github</title>
 </head>
+
 <body>
   <div class="page-header">
-  <h1>Github Repo Lookup <br> <small>enter a valid github repo name</small></h1>
-</div>
+    <h1>Github Repo Lookup <br> <small>enter a valid github repo name</small></h1>
+  </div>
   <h1></h1>
   <div class="container">
     <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Enter a repo Name</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-md-3">
-        <div id="avatar">
+      <div class="panel-heading">
+        <h3 class="panel-title">Enter a repo Name</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3">
+            <div id="avatar">
+
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div id="repos"></div>
+          </div>
+          <div class="col-md-5">
+            <label for="user_name">Enter a Username:</label>
+            <input id="inputName" type="text">
+            <button class="button" id="submitName">Submit!</button>
+            <div id="output"></div>
+          </div>
 
         </div>
       </div>
-      <div class="col-md-9">
-        <label for="user_name">Enter a Name:</label>
-          <input id="inputName" type="text">
-          <button class="button" id="submitName">Submit!</button>
-  </div>
-  <div id="output"></div>
-  </div>
-  </div>
-</div>
+    </div>
   </div>
 
 </body>
+
 </html>
