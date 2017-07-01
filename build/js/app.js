@@ -16,8 +16,8 @@ RepoAcc.prototype.getUserAcc = function(userName) {
     }).done(function(repos) {
       $.each(repos, function(index, repo) {
         if(repo.description===null){
-          repo.description="No description for this repository"
-        };
+          repo.description="No description for this repository";
+        }
         $('#repos').append(` <div class='well'>
                         <div class='row'>
                             <div class='col-md-7'>
@@ -39,16 +39,35 @@ RepoAcc.prototype.getUserAcc = function(userName) {
       });
 
     });
-    $('#avatar').html('<img class="thumbnail" src="' + response.avatar_url + '">');
-    if (response.name === null) {
-      response.name = "No name set";
-    }
+    $('#avatar').html('<img class="thumbnail avatar" src="' + response.avatar_url + '">');
+    if (response.name === null) {response.name = "No name set";}
+    if(response.location===null){response.location="No Location Information provided";}
+    if(response.email===null){response.email="Email not provided";}
+    if(response.bio===null){response.bio="Bio not provided";}
 
-    $('#output').append(`<div class="page-header" id="userName"><span class="label label-primary">${response.name}<span></div> `);
+    $('#output').html(`<div class="page-header" id="userName"><span class="label label-default">${response.name}<span>
+    </div>
+    <span class="label label-success">Followers:${response.followers}</span>
+    <span class="label label-success">Following:${response.following}</span><br>
+    <h4>User Data:</h4>
+
+
+    <span class="label label-warning">User Bio:</span><div class="well well-sm"> ${response.bio}</div>
+
+
+    <span class="label label-warning">Location:</span><div class="well well-sm"> ${response.location}</div>
+
+
+    <span class="label label-warning">Email:</span><div class="well well-sm"> ${response.email}</div>
+
+
+    <a href="${response.html_url}"><button class="btn btn-info">View Github Profile</button></a>
+
+     `);
 
   }).fail(function(error) {
     $('#output').text(error.responseJSON.message);
-    $('#inputForm').empty();
+    $('#repos').empty();
     $('#avatar').empty();
   });
 };
@@ -59,18 +78,21 @@ exports.repoAccModule = RepoAcc;
 var RepoAcc = require('./../js/lookup.js').repoAccModule;
 
 $(document).ready(function() {
-  $('#submitName').click(function() {
+  $('#searchBtn').click(function() {
+
 
     var userName = $('#inputName').val();
-
     $('#inputName').val("");
+
+
     var repoAccObject = new RepoAcc();
     repoAccObject.getUserAcc(userName);
-    
+    $('#repos').empty();
 
 
 
-    console.log(userName);
+
+
   });
 
 });

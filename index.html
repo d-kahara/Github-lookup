@@ -21,36 +21,42 @@
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Enter a Valid Github User name:</h3>
+        <h3 class="panel-title">Please enter a Valid Github User name</h3>
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-5">
+            <div class="input-group">
+              <input type="text" id="inputName" class="form-control" placeholder="Enter username here">
+              <span class="input-group-btn">
+                <button class="btn btn-lg hvr-shutter-in-vertical" id="searchBtn" type="button">Search</button>
+              </span>
+
+            </div>
+            <!-- /input-group -->
+          </div>
+          <!-- /.col-lg-6 -->
+          <div class="col-md-7"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
             <div id="avatar">
 
             </div>
           </div>
-          <div class="col-md-4">
 
-          </div>
-
-          <div class="col-md-5">
-            <div class="hide-input">
-            <label for="user_name">Enter a Username:</label>
-            <input id="inputName" type="text">
-            <button class="btn btn-success" id="submitName">Submit!</button>
-            </div>
-            <div id="output"></div>
-          </div>
-
+          <div id="output" class="col-md-7"></div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div id="repos"></div>
-          </div>
+
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="repos"></div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 </body>
