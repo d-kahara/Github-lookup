@@ -1,4 +1,4 @@
-//var apiKey = require('./../.env').apiKey;
+var apiKey = require('./../.env').apiKey
 
 function RepoAcc() {
 
@@ -6,7 +6,7 @@ function RepoAcc() {
 
 RepoAcc.prototype.getUserAcc = function(userName) {
   $.ajax({
-    url: ('https://api.github.com/users/' + userName + '?access_token=e7f7c50800fd4bd7620f8eaa9719708bcc8b1346')
+    url: ('https://api.github.com/users/' + userName + '?access_token=' + apiKey)
   }).done(function(response) {
     $.ajax({
       url: 'https://api.github.com/users/' + userName + '/repos',
