@@ -7,19 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="build/js/vendor.min.js"></script>
   <script type="text/javascript" src="build/js/app.js"></script>
+  <link rel="stylesheet" href="build/css/styles.css">
   <link rel="stylesheet" href="build/css/vendor.css">
+  <link href="https://fonts.googleapis.com/css?family=Rationale|Roboto+Slab" rel="stylesheet">
   <title>Github</title>
 </head>
 
 <body>
   <div class="page-header">
-    <h1>Github Repo Lookup <br> <small>enter a valid github repo name</small></h1>
+    <h1 class="header">Github Info Lookup </h1>
   </div>
   <h1></h1>
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Enter a repo Name</h3>
+        <h3 class="panel-title">Enter a Valid Github User name:</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -29,15 +31,23 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div id="repos"></div>
+
           </div>
+
           <div class="col-md-5">
+            <div class="hide-input">
             <label for="user_name">Enter a Username:</label>
             <input id="inputName" type="text">
-            <button class="button" id="submitName">Submit!</button>
+            <button class="btn btn-success" id="submitName">Submit!</button>
+            </div>
             <div id="output"></div>
           </div>
 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="repos"></div>
+          </div>
         </div>
       </div>
     </div>

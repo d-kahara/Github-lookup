@@ -1,5 +1,4 @@
-var RepoName = require('./../js/lookup.js').repoNameModule;
-var RepoDescription = require('./../js/lookup.js').repoDescriptionModule;
+var RepoAcc = require('./../js/lookup.js').repoAccModule;
 
 $(document).ready(function() {
   $('#submitName').click(function() {
@@ -7,10 +6,10 @@ $(document).ready(function() {
     var userName = $('#inputName').val();
 
     $('#inputName').val("");
-    var repoNameObject = new RepoName();
-    repoNameObject.getUsername(userName);
-    var repoDescrObject = new RepoDescription();
-    repoDescrObject.getRepos(userName);
+    var repoAccObject = new RepoAcc();
+    repoAccObject.getUserAcc(userName);
+    
+
 
 
     console.log(userName);
