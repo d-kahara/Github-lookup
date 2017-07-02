@@ -7,7 +7,17 @@ body {
   text-align: center;
   font-family: 'Roboto Slab', serif;
   font-family: 'Rationale', sans-serif;
+}
+.footer {
+  background-color: #ccc;
+  height: 17rem;
+  text-align: center;
+  .footerName{
+    color: #2004ef;
+  }
+  .contact {
 
+  }
 
 }
 #userName {
@@ -25,7 +35,7 @@ body {
 
 }
 #inputName {
-  height: 4rem; 
+  height: 4rem;
 }
 /* Shutter In Vertical */
 .hvr-shutter-in-vertical {
